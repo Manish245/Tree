@@ -53,7 +53,7 @@ public class BasicTraversing {
     public static void printNodeLevelBy(TreeNode node){
         if(node==null)return;
         System.out.println("----------Display node level by level----------");
-        System.out.println(node.val);
+        System.out.print(node.val+",");
        Queue<TreeNode> queue=new LinkedList<TreeNode>();
        queue.add(node.left);
        queue.add(node.right);
@@ -61,13 +61,14 @@ public class BasicTraversing {
        while(!queue.isEmpty()){
            TreeNode childNode=queue.poll();
            if(childNode!=null){
-               System.out.println(childNode.val);
+               System.out.print(childNode.val+",");
                if(childNode.left!=null)
                    queue.add(childNode.left);
                if(childNode.right!=null)
                    queue.add(childNode.right);
            }
        }
+        System.out.println();
         System.out.println("----------End----------");
     }
 
