@@ -19,13 +19,23 @@ public class Main {
         System.out.println("find key by loop: "+BinarySearchTree.findKeyUsingLoop(MockData.createBinarySearchTreeData(),140));
 
 
-        TreeNode nodes=BinarySearchTree.insertNodeRecursive(MockData.createBinarySearchTreeData(),95);
-        nodes=BinarySearchTree.insertNodeRecursive(nodes,45);
+        //TreeNode nodes=BinarySearchTree.insertNodeRecursive(MockData.createBinarySearchTreeData(),95);
+        TreeNode nodes=BinarySearchTree.insertNodeRecursive(new TreeNode(40),20);
+        nodes=BinarySearchTree.insertNodeRecursive(nodes,60);
+        nodes=BinarySearchTree.insertNodeRecursive(nodes,30);
+        nodes=BinarySearchTree.insertNodeRecursive(nodes,50);
+        nodes=BinarySearchTree.insertNodeRecursive(nodes,70);
         nodes=BinarySearchTree.insertNodeRecursive(nodes,10);
+        nodes=BinarySearchTree.insertNodeRecursive(nodes,65);
         nodes=BinarySearchTree.insertNodeRecursive(nodes,75);
-        nodes=BinarySearchTree.insertNodeRecursive(nodes,205);
+        nodes=BinarySearchTree.insertNodeRecursive(nodes,5);
+        nodes=BinarySearchTree.insertNodeRecursive(nodes,3);
+        nodes=BinarySearchTree.insertNodeRecursive(nodes,4);
         BasicTraversing.printNodeLevelBy( nodes);
 
+        AvlTree.LeftToRightRotation(nodes);
+       BasicTraversing.printNodeLevelBy(nodes);
+        BasicTraversing.printNodeHeightLevelBy(nodes);
 
     }
 }

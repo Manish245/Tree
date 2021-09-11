@@ -54,8 +54,8 @@ public class BasicTraversing {
         if(node==null)return;
         System.out.println("----------Display node level by level----------");
         System.out.print(node.val+",");
-       Queue<TreeNode> queue=new LinkedList<TreeNode>();
-       queue.add(node.left);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(node.left);
        queue.add(node.right);
 
        while(!queue.isEmpty()){
@@ -68,6 +68,30 @@ public class BasicTraversing {
                    queue.add(childNode.right);
            }
        }
+        System.out.println();
+        System.out.println("----------End----------");
+    }
+    /*
+       Write a program to print the nodes level by level.
+        */
+    public static void printNodeHeightLevelBy(TreeNode node){
+        if(node==null)return;
+        System.out.println("----------Display node level by level----------");
+        System.out.print(node.height+",");
+        Queue<TreeNode> queue=new LinkedList<TreeNode>();
+        queue.add(node.left);
+        queue.add(node.right);
+
+        while(!queue.isEmpty()){
+            TreeNode childNode=queue.poll();
+            if(childNode!=null){
+                System.out.print(childNode.height+",");
+                if(childNode.left!=null)
+                    queue.add(childNode.left);
+                if(childNode.right!=null)
+                    queue.add(childNode.right);
+            }
+        }
         System.out.println();
         System.out.println("----------End----------");
     }

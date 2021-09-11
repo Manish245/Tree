@@ -4,6 +4,7 @@ package com.Tree;
      public int val;
      public TreeNode left;
      public TreeNode right;
+     public int height=0;
       TreeNode() {}
       TreeNode(int val) { this.val = val; }
       TreeNode(int val, TreeNode left, TreeNode right) {
